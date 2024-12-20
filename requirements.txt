@@ -1,0 +1,13 @@
+python-dotenv
+langchain 
+langchain-community 
+langchain-openai
+langchain-ollama
+pypdf
+faiss-gpu
+groq
+langchain-groq
+beautifulsoup4
+streamlit
+langchain_google_genai
+PyPDF2
