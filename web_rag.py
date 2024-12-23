@@ -9,13 +9,10 @@ from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from dotenv import load_dotenv
 
-load_dotenv()
-
-# Load the GROQ and Google API keys
-groq_api_key = os.getenv('GROQ_API_KEY')
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+# Load secrets from secrets.toml
+groq_api_key = st.secrets["GROQ_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 
 st.title("RAG Webpage Assistant Using Mixtral")
 
@@ -72,4 +69,4 @@ if prompt1:
                 st.write(doc.page_content)
                 st.write("--------------------------------")
     else:
-        st.write("Please embed the webpage first.")
+        st.write("Please embed the webpage first.") 
