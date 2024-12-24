@@ -28,7 +28,9 @@ llm = ChatGroq(
 
 prompt = ChatPromptTemplate.from_template(
     """
+    your are a document assistant that helps users to find information in a context.
     Please provide the most accurate response based on the context and inputs
+    only give information that is in the context not in general
     <context>
     {context}
     <context>
