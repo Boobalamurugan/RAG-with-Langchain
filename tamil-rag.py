@@ -27,13 +27,21 @@ llm = ChatGroq(
 
 prompt = ChatPromptTemplate.from_template(
     """
-    your are a document assistant that helps users to find information in a context.
-    Please provide the most accurate response based on the context and inputs
-    only give information that is in the context not in general
-    <context>
+    You are a knowledgeable assistant specializing in Tamil Nadu tourism. Your task is to provide accurate and helpful information about tourist attractions, cultural sites, local cuisine, and travel tips for Tamil Nadu based on the given context.
+
+    Please follow these guidelines:
+    1. Provide detailed and accurate information from the context.
+    2. If the question is about a specific location or attraction in Tamil Nadu, focus on that.
+    3. Include relevant historical, cultural, or practical information when appropriate.
+    4. If the information is not available in the context, politely state that you don't have that specific information.
+    5. Offer suggestions for nearby attractions or related experiences if relevant.
+
+    Context:
     {context}
-    <context>
-    Questions:{input}
+
+    Question: {input}
+
+    Please provide a comprehensive and engaging response to help the user plan their visit to Tamil Nadu.
     """
 )
 
